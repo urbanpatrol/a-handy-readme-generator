@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/urbanpatrol/a-handy-readme-generator/issues"
   },
-  "homepage": "https://github.com/urbanpatrol/a-handy-readme-generator#readme"
+  "homepage": "https://github.com/urbanpatrol/a-handy-readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^6.5.0"
+  }
 }
