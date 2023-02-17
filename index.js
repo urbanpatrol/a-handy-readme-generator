@@ -1,9 +1,10 @@
-const fs = require("fs");
-const path = require('path');
+// Dependencies
 const inquirer = require("inquirer");
+const fs = require("fs");
+const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// array of questions for user
+// Array of questions for input to generate the README
 const questions = [
     {
         type: "input",
@@ -13,7 +14,7 @@ const questions = [
     {
         type: "input",
         name: "email",
-        message: "What is your email?"
+        message: "What is your email address?"
     },
     {
         type: "input",
@@ -23,13 +24,13 @@ const questions = [
     {
         type: "input",
         name: "description",
-        message: "Describe your project:"
+        message: "Briefly describe your project:"
     },
     {
         type: "list",
         name: "license",
         message: "What license does your project have?",
-        choices: ["MIT", "APACHE2.0", "Boost1.0", "GPL3.0", "BSD2" ,"BSD3", "None"]
+        choices: ["MIT", "APACHE2.0", "Boost1.0", "GPL3.0", "BSD2", "BSD3", "None"]
     },
     {
         type: "input",
@@ -62,11 +63,11 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
-    inquirer.createPromptModule(questions)
-    .then((inquirerAnswers) => {
-        console.log("Generating... Please wait...");
-        writeToFile("./dist/README.md", generateMarkdown({inquirerAnswers}));
-    })
+    inquirer.prompt(questions)
+        .then((inquirerAnswers) => {
+            console.log("Generating... Please wait...");
+            writeToFile("./dist/README.md", generateMarkdown(inquirerAnswers));
+        })
 
 }
 
