@@ -1,96 +1,41 @@
 // function to generate markdown for README
-function generateMarkdown(data) {
+const generateMarkdown = data => {
   return `# ${data.title}
-${renderBadge(data.license)}
+  ![Github licence](http://img.shields.io/badge/license-${data.license}-yellowgreen.svg)
 
-## Github URL 🌐
+  
+  ## Description 📄
+  ${data.description}
 
-[${data.github}](https://github.com/${data.github}/)
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## Installation 📥 
+  ${data.install}
 
-## Description 📝
+  ## Usage 🔩
+  ${data.usage}
 
-${data.description}
+  ## License 🛡 
+  This project is license under ${data.license}
 
+  ## Contributors 🙈🙉🙊
+  ${data.contributors}
 
-## Table of Contents 🗒
+  ## Testing 💻
+  ${data.test}
 
-* [Installations](#dependencies)
-
-* [Usage](#usage)
-
-${renderLink(data.license)}
-
-* [Contributors](#contributors)
-
-* [Test](#test)
-
-
-## Installations (Dependencies) 💻
-
-To install dependencies, run these commands:
-
-\`\`\`
-${data.dependencies}
-\`\`\`
-
-
-## Usage 🏆
-
-${data.usage}
-
-${renderSection(data.license)}
-
-
-## Contributors 😃
-
-${data.contributors}
-
-Contact me at ${data.email}
-
-
-## Tests 🧪
-
-To run tests, run these commands:
-
-\`\`\`
-${data.test}
-\`\`\`
-
+  ## Questions 📩
+  If you have any queries about this project, please contact me directly at ${data.email}. You can view more of my projects at https://github.com/${data.github}.
 `;
-}
 
-// Function to render badge
-function renderBadge(license) {
-  if (license !== "None") {
-    return `![GitHub license](https://img.shields.io/badge/license-${license}-yellowgreen.svg)`
-  }
-  return ''
-}
-
-// Function to render link
-function renderLink(license) {
-  if (license !== "None") {
-    return (
-      `\n* [License](#license)\n`
-    )
-  }
-  return ''
 }
 
 
-// Function to render section
-function renderSection(license) {
-  if (license !== "None") {
-    return (
-      `## License 📛
-
-      Copyright © ${license}. All rights reserved. 
-      
-      Licensed under the ${license} license.`
-
-    )
-  }
-  return ''
-}
-
+// use for importing Markdown in index 
 module.exports = generateMarkdown;
