@@ -1,10 +1,10 @@
-// Dependencies
+// dependencies
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// Array of questions for input to generate the README
+// array of questions for input to generate the README
 const questions = [
     {
         type: "input",
