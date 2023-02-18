@@ -38,31 +38,25 @@ const generateMarkdown = data => {
 
 // function to render badge
 const renderBadge = license => {
-  return license !== "None" 
-    ? `![GitHub license](https://img.shields.io/badge/license-${license}-yellowgreen.svg)` 
+  return license !== "None"
+    ? `![GitHub license](https://img.shields.io/badge/license-${license}-yellowgreen.svg)`
     : '';
 }
 
 // function to render link
 const renderLink = license => {
   return license !== "None"
-  ? `\n* [License](#license)\n`
+    ? `\n* [License](#license)\n`
     : '';
-  }
+}
 
 // function to render section
-function renderSection(license) {
-  if (license !== "None") {
-    return (
-      `## License 📛
-
-      Copyright © ${license}. All rights reserved. 
-      
-      Licensed under the ${license} license.`
-
-    )
-  }
-  return ''
+const renderSection = license => {
+  return license !== "None"
+    ? `\n## License 📛
+    \nCopyright © ${license}. All rights reserved. 
+      \nLicensed under the ${license} license.`
+    : '';
 }
 
 // use for importing Markdown in index 
