@@ -8,7 +8,7 @@ const generateMarkdown = data => {
   ${data.description}
 
   ## Table of Contents
-  * [Installation](#installation)
+  * [Installation](#dependencies)
   * [Usage](#usage)
   * [License](#license)
   * [Contributing](#contributing)
@@ -16,7 +16,7 @@ const generateMarkdown = data => {
   * [Questions](#questions)
   
   ## Installation 📥 
-  ${data.install}
+  ${data.dependencies}
 
   ## Usage 🔩
   ${data.usage}
