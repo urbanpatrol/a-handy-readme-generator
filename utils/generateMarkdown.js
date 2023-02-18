@@ -22,7 +22,7 @@ const generateMarkdown = data => {
   ${data.usage}
 
   ## License 🛡 
-  This project is license under ${data.license}
+  This project is licensed under ${data.license}
 
   ## Contributors 🙈🙉🙊
   ${data.contributors}
@@ -36,6 +36,44 @@ const generateMarkdown = data => {
 
 }
 
+// function to render badge
+// function renderBadge(license) {
+//   if (license !== "None") {
+//     return `![GitHub license](https://img.shields.io/badge/license-${license}-yellowgreen.svg)`
+//   }
+//   return ''
+// }
+
+const renderBadge = license => {
+  return ` !== "None")
+  ? ![GitHub license](https://img.shields.io/badge/license-${license}-yellowgreen.svg)
+  : '';`
+  }
+
+// function to render link
+const renderLink = license => {
+  if (license !== "None") {
+    return (
+      `\n* [License](#license)\n`
+    )
+  }
+  return ''
+}
+
+// function to render section
+function renderSection(license) {
+  if (license !== "None") {
+    return (
+      `## License 📛
+
+      Copyright © ${license}. All rights reserved. 
+      
+      Licensed under the ${license} license.`
+
+    )
+  }
+  return ''
+}
 
 // use for importing Markdown in index 
 module.exports = generateMarkdown;

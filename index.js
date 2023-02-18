@@ -9,22 +9,22 @@ const questions = [
     {
         type: "input",
         name: "github",
-        message: "What is your Github username?"
+        message: "Your Github username."
     },
     {
         type: "input",
         name: "email",
-        message: "What is your email address?"
+        message: "Your email address."
     },
     {
         type: "input",
         name: "title",
-        message: "What is the name of your project?"
+        message: "Title of your project."
     },
     {
         type: "input",
         name: "description",
-        message: "Briefly describe your project:"
+        message: "Provide a brief description of your project, explaining the what, why and how. Use the following as a guide:\n- What was your motivation?\n- Why did you build this project?\n- What problem does it solve?\n- What did you learn?\n"
     },
     {
         type: "list",
@@ -35,7 +35,7 @@ const questions = [
     {
         type: "input",
         name: "dependencies",
-        message: "Are there any dependencies to install?",
+        message: "Steps required to install your project? Provide a step-by-step description of how to get the development environment running. Are there any dependencies?",
         default: "npm i"
     },
     {
@@ -47,12 +47,12 @@ const questions = [
     {
         type: "input",
         name: "usage",
-        message: "What is this repo used for?",
+        message: "Provide instructions and examples for use.",
     },
     {
         type: "input",
         name: "contributors",
-        message: "Who are the contributors to this repo?",
+        message: "List your collaborators, if any, with links to their GitHub profiles.",
     }
 ];
 
