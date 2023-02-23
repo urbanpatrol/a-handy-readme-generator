@@ -29,7 +29,8 @@ A Node.js based tool that users can utilise to generate a README.md file for the
 >- Questions
 
 ## Usage
-- This tool will allow the user to create a README.md file by first, opening a new terminal in VS Code and typing node index.js 
+This tool will allow the user to create a README.md file by first, downloading the repo files to their local machine and then open them in visual studio with a new terminal window.
+- Type in 'node index.js' to initiate the document process. 
 
 Users will be prompted for the following:
 - Github username
